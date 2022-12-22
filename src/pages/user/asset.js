@@ -1,3 +1,5 @@
 export const AssetPage = () => {
-  return <div>asset</div>;
+  return <div>
+    Xin chào!
+  </div>;
 };
