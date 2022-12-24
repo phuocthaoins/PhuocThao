@@ -10,10 +10,10 @@ import { Outlet, Link } from "react-router-dom";
 const { Header, Content, Footer, Sider } = Layout;
 const items1 = ["1", "2", "3"].map((key) => ({
   key,
-  label: `nav ${key}`,
+  label: `Báo cáo doanh thu tháng ${key}`,
 }));
 
-export const LoginLayout = () => {
+export const HomeLayout = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -25,7 +25,7 @@ export const LoginLayout = () => {
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={["2"]}
+        //   defaultSelectedKeys={["2"]}
           items={items1}
         />
       </Header>
@@ -56,13 +56,13 @@ export const LoginLayout = () => {
               items={[
                 {
                   key: "1",
-                  icon: <Link to="" />,
-                  label: "Login",
+                  icon: <Link to="user" />,
+                  label: "Go to UserLayout",
                 },
                 {
                   key: "3",
-                  icon: <Link to="help" />,
-                  label: "Help",
+                  icon: <Link to="user/asset" />,
+                  label: "Go to Setup Database",
                 },
               ]}
             />
@@ -76,7 +76,6 @@ export const LoginLayout = () => {
           textAlign: "center",
         }}
       >
-        Ant Design ©2018 Created by Ant UED
       </Footer>
     </Layout>
   );

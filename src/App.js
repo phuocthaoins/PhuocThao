@@ -1,13 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { LoginLayout, UserLayout } from "./components/layouts";
-import { ProfilePage, AssetPage } from "./pages/user";
+import { LoginLayout, UserLayout, HomeLayout } from "./components/layouts";
+import { DataTable, AssetPage } from "./pages/user";
 import { LoginPage, HelpPage, ForgetPasswordPage } from "./pages/login";
-import { NotFound } from "./pages/404";
+import { Home } from "./pages/home";
 
 function App() {
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -18,11 +18,11 @@ function App() {
         </Route>
 
         <Route path="/user" element={<UserLayout />}>
-          <Route index element={<ProfilePage />} />
+          <Route index element={<DataTable />} />
           <Route path="asset" element={<AssetPage />} />
         </Route>
 
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<HomeLayout />} />
       </Routes>
     </BrowserRouter>
   );
