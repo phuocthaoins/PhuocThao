@@ -8,10 +8,17 @@ import { Layout, Menu, theme } from "antd";
 import { Outlet, Link } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
-const items1 = ["1", "2", "3"].map((key) => ({
-  key,
-  label: `Báo cáo doanh thu tháng ${key}`,
-}));
+const items1 = [
+  {key: "1",
+  icon: <Link to="/login" />,
+  label: "LOGIN"},
+  {key: "2",
+  icon: <Link to="/login/forget" />,
+  label: "NỘI DUNG BÀI 1"},
+  // {key: "3",
+  // icon: <Link to="/" />,
+  // label: "NỘI DUNG BÀI 3"},
+]; 
 
 export const HomeLayout = () => {
   const {
@@ -57,12 +64,12 @@ export const HomeLayout = () => {
                 {
                   key: "1",
                   icon: <Link to="user" />,
-                  label: "Go to UserLayout",
+                  label: "Báo cáo doanh thu hàng tháng",
                 },
                 {
                   key: "3",
                   icon: <Link to="user/asset" />,
-                  label: "Go to Setup Database",
+                  label: "Cập nhật đơn hàng",
                 },
               ]}
             />

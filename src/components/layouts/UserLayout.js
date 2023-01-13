@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 import {  Layout, Menu, theme } from "antd";
 import { Link, Outlet } from "react-router-dom";
+import { HeaderUser } from "../header";
 
 const { Header, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
@@ -19,13 +20,10 @@ function getItem(label, key, icon, children) {
   };
 }
 const items = [
-  getItem(<Link to="forget">Báo cáo doanh thu</Link>, "1", <PieChartOutlined />),
-  getItem("Quản lý sản phẩm", "2", <DesktopOutlined />),
-  getItem("Team", "sub2", <TeamOutlined />, [
-    getItem("Team 1", "6"),
-    getItem("Team 2", "8"),
-  ]),
-  getItem("Files", "9", <FileOutlined />),
+  getItem(<Link to="/user">Báo cáo doanh thu</Link>, "1", <PieChartOutlined />),
+  getItem(<Link to="/login">Login Page</Link>, "2", <DesktopOutlined />),
+  
+  getItem(<Link to="/">Home</Link>, "3", <UserOutlined />),
 ];
 export const UserLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -58,12 +56,8 @@ export const UserLayout = () => {
         />
       </Sider>
       <Layout className="site-layout">
-        <Header
-          style={{
-            padding: 0,
-            background: colorBgContainer,
-          }}
-        />
+        <HeaderUser/>
+        
         <Outlet />
         <Footer
           style={{

@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LoginLayout, UserLayout, HomeLayout } from "./components/layouts";
 import { DataTable, AssetPage } from "./pages/user";
 import { LoginPage, HelpPage, ForgetPasswordPage } from "./pages/login";
-import { Home } from "./pages/home";
+import { HomePage } from "./pages/home";
 
 function App() {
   
@@ -22,7 +22,9 @@ function App() {
           <Route path="asset" element={<AssetPage />} />
         </Route>
 
-        <Route path="*" element={<HomeLayout />} />
+        <Route path="/" element={<HomeLayout />} > 
+          <Route index element={<HomePage />}/>
+        </Route>
       </Routes>
     </BrowserRouter>
   );

@@ -8,10 +8,17 @@ import { Layout, Menu, theme } from "antd";
 import { Outlet, Link } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
-const items1 = ["1", "2", "3"].map((key) => ({
-  key,
-  label: `nav ${key}`,
-}));
+const items1 = [
+  {key: "1",
+  icon: <Link to="/login" />,
+  label: "LOGIN"},
+  {key: "2",
+  icon: <Link to="/user" />,
+  label: "USER"},
+  {key: "3",
+  icon: <Link to="/" />,
+  label: "HOME"},
+];
 
 export const LoginLayout = () => {
   const {
@@ -25,7 +32,7 @@ export const LoginLayout = () => {
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={["2"]}
+          // defaultSelectedKeys={["2"]}
           items={items1}
         />
       </Header>
@@ -76,7 +83,6 @@ export const LoginLayout = () => {
           textAlign: "center",
         }}
       >
-        Ant Design ©2018 Created by Ant UED
       </Footer>
     </Layout>
   );

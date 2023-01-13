@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { instance } from "../../axios/client";
+import { instance } from "../../axios";
 import { Table } from "antd";
 
 export function DataTable() {
@@ -22,7 +22,7 @@ export function DataTable() {
   ];
 
   return (
-    <div>
+    <div style={{ minHeight: "500px"}}>
       <h3 style={{ textAlign:"center" }}>Báo cáo bán hàng tháng 12</h3>
       <Table columns={columns} dataSource={data} />
     </div>

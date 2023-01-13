@@ -1,7 +1,7 @@
 import React from "react";
-import { instance } from "../../axios/client";
+import { instance } from "../../axios";
 import { Form, Input, Button, InputNumber, Select } from "antd";
-
+import { Alert } from 'antd';
 
 export function AssetPage ({ setData }) {
   const [formSetData] = Form.useForm();
@@ -13,6 +13,7 @@ export function AssetPage ({ setData }) {
     const onFinish = (values) => {
         instance.post("/add-data", values).then((ketQuaTraVe) => {
             const duLieu = ketQuaTraVe.data;
+            
             setData(duLieu);
         });
     };
